@@ -1,0 +1,94 @@
+<DOCTYPE html>
+  <html lang="es" >
+  <head>
+      <link href=css\baja.css rel="stylesheet" type="text/css">
+  </head>
+  <body>
+      <!--Cabecera-->
+  <header class="indexylogo">
+    <nav>
+      <ul>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="discotecas.html">DISCOTECAS</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">LOGIN</a>
+          <div class="dropdown-content">
+            <a href="altausuario.html">Darse de Alta user</a>
+            <a href="alta.html">Darse de Alta admin</a>
+            <a href="bajausuario.html">Darse de Baja user</a>
+            <a href="baja.html">Darse de Baja admin</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+<form>
+            <!--<label for="search">---------------------------------</label>-->
+            <input type="text" id="search" placeholder="    Buscar..." name="search">
+            <button type="submit"> <img src="img/lupabuscador.png"></button>
+          </form>
+        
+          
+          
+    </header>  
+   <form class="formu" action="/vidiliaDiscoteca/ControladorServletUsuario" method="post">
+        <div>
+            <h2><mark>FORMULARIO DE BAJA DE USUARIO</mark></h2>
+        </div>
+       <div class="formulario">
+        <label for="id">id_usuario:</label>
+                <input type="number" id="id" name="id" required>
+                <br>
+                <input type="hidden" name="action" value="borrar">
+                <input type="submit" value="Enviar">
+                <input type="button" value="Cancelar" onclick="limpiarFormulario()">
+        </div>
+        <script>
+            function limpiarFormulario() {
+                document.getElementById("formulario").reset();
+            }
+        </script>
+         <script class="formulario">
+            function showPassword() {
+              var passwordInput = document.getElementById("password");
+              if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+              } else {
+                passwordInput.type = "password";
+              }
+            }
+            
+            var emailInput = document.getElementById("email");
+            emailInput.addEventListener("input", function(event) {
+              if (!event.target.value.includes("@")) {
+                event.target.setCustomValidity("El correo debe incluir un '@'");
+              } else {
+                event.target.setCustomValidity("");
+              }
+            });
+            </script>
+              </form> 
+    <footer>
+    <div class="footer"> 
+        
+         
+            <ul class="list-inline">
+               
+                 
+                 <li class="list-inline-item"><a href="SobreNosotros.html">Sobre Nosotros</a></li>
+                 <li class="list-inline-item"><a href="contacto.html">Contacto</a></li>
+                 <li class="list-inline-item"><a href="politicadeprivacidad.html">Política de Privacidad</a></li>
+            </ul>
+            <p class="copyright">Discotecas © 2023</p>
+  
+            <div class="icons_space">
+              <a href="https://www.instagram.com/vidiliamedac/" target="_blank">
+                <img src="img/instagram.jpeg" alt="Logo Instagram">
+             </a>
+             <a href="https://www.facebook.com/" target="_blank">
+                 <img src="img/facebook.jpeg" alt="Logo Facebook" class="margin_mobile_icons">
+             </a>
+             
+            </div>
+    </div>
+    </footer>
+    </html>
